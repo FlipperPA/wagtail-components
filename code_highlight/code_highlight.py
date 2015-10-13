@@ -1,9 +1,7 @@
 from django.utils.safestring import mark_safe
-from markdown import markdown
 from pygments import highlight
 from pygments.formatters import get_formatter_by_name
 from pygments.lexers import get_lexer_by_name
-
 from wagtail.wagtailcore import blocks
 
 
@@ -11,6 +9,7 @@ class CodeBlock(blocks.StructBlock):
     """
     Code Highlighting Block
     """
+
     LANGUAGE_CHOICES = (
         ('python', 'Python'),
         ('javascript', 'Javascript'),
@@ -41,20 +40,3 @@ class CodeBlock(blocks.StructBlock):
             noclasses=False,
         )
         return mark_safe(highlight(src, lexer, formatter))
-
-
-class MarkDownBlock(blocks.TextBlock):
-    """ MarkDown Block """
-
-    class Meta:
-        icon = 'code'
-
-    def render_basic(self, value):
-        md = markdown(
-            value,
-            [
-                'markdown.extensions.fenced_code',
-                'codehilite',
-            ],
-        )
-        return mark_safe(md)
