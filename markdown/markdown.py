@@ -11,7 +11,7 @@ class MarkDownBlock(blocks.TextBlock):
     class Meta:
         icon = 'code'
 
-    def render_basic(self, value):
+    def render_basic(self, value, context=None):
         md = markdown(
             value,
             [
