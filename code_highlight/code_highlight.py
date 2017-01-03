@@ -27,7 +27,7 @@ class CodeBlock(blocks.StructBlock):
     class Meta:
         icon = 'code'
 
-    def render(self, value):
+    def render(self, value, context=None):
         src = value['code'].strip('\n')
         lang = value['language']
 
