@@ -10,5 +10,6 @@ Frequently used page types and blocks for the Wagtail CMS.
 
 # Contributors
 
+- Timothy Allen (https://github.com/flipperpa)
 - Frank Wiles of RevSys (http://www.revsys.com/about/team/)
-- Timothy Allen
+- Robin Skahjem-Eriksen (https://github.com/ironhouzi)
